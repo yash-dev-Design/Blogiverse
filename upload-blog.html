@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload New Blog - Blogiverse</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="blogger.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@400..900&family=Dancing+Script:wght@400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rowdies:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">Blogiverse</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#posts" class="nav-link">Posts</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="upload-blog.html" class="nav-link">Upload Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="admin-login.html" class="nav-link admin-link">Admin</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="upload-blog-container">
+        <h2>Upload New Blog Post</h2>
+        <form id="blog-upload-form" class="upload-form">
+            <div class="form-group">
+                <label for="blog-title">Title:</label>
+                <input type="text" id="blog-title" required style="border: 1px solid black;">
+            </div>
+
+            <div class="form-group">
+                <label for="blog-category">Category:</label>
+                <select id="blog-category" required style="border: 1px solid black;">
+                    <option value="Technology">Technology</option>
+                    <option value="Lifestyle">Lifestyle</option>
+                    <option value="Travel">Travel</option>
+                    <option value="Education">Education</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="blog-image-url">Image URL:</label>
+                <input type="url" id="blog-image-url" placeholder="Optional: URL for the blog post image" style="border: 1px solid black;">
+            </div>
+
+            <div class="form-group">
+                <label for="blog-summary">Summary:</label>
+                <textarea id="blog-summary" rows="6" required style="border: 1px solid black;"></textarea >
+            </div>
+
+            <div class="form-group">
+                <label for="blog-comments">Number of Comments:</label>
+                <input type="number" id="blog-comments" value="0" min="0" style="border: 1px solid black;">
+            </div>
+
+            <button type="submit" class="submit-btn" >Publish Blog</button>
+            <div id="message-box" class="message-box"></div>
+        </form>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Blogiverse</h3>
+                    <p>Your destination for inspiring stories and valuable insights. Join our community of readers and
+                        writers.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#posts">Posts</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="index.html#posts">Technology</a></li>
+                        <li><a href="index.html#posts">Lifestyle</a></li>
+                        <li><a href="index.html#posts">Travel</a></li>
+                        <li><a href="index.html#posts">Education</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to get the latest updates</p>
+                    <form class="newsletter-form" id="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Blogiverse. All rights reserved. Made With ♥ By <a href="https://royz-portfolio.netlify.app/" target="_blank" title="author website" style="text-decoration: none; color: whitesmoke; font-weight: bold; font-style: italic;">YashRoyz</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scroll-to-top" class="scroll-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <div class="loading-spinner" id="loading-spinner">
+        <div class="spinner"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const blogUploadForm = document.getElementById('blog-upload-form');
+            const messageBox = document.getElementById('message-box');
+
+            if (blogUploadForm) {
+                blogUploadForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    const title = document.getElementById('blog-title').value;
+                    const category = document.getElementById('blog-category').value;
+                    const imageUrl = document.getElementById('blog-image-url').value;
+                    const summary = document.getElementById('blog-summary').value;
+                    const comments = parseInt(document.getElementById('blog-comments').value, 10);
+                    const currentDate = new Date();
+                    const monthNames = ["January", "February", "March", "April", "May", "June",
+                                        "July", "August", "September", "October", "November", "December"];
+                    const dateString = `${monthNames[currentDate.getMonth()]} ${currentDate.getDate()}, ${currentDate.getFullYear()}`;
+
+                    const newBlogPost = {
+                        id: Date.now(), // Unique ID for the blog post
+                        title,
+                        category,
+                        imageUrl,
+                        summary,
+                        date: dateString,
+                        comments
+                    };
+
+                    // Get existing posts from localStorage
+                    const existingPosts = JSON.parse(localStorage.getItem('blogPosts')) || [];
+
+                    // Add new post to the beginning of the array
+                    existingPosts.unshift(newBlogPost);
+
+                    // Save updated posts to localStorage
+                    localStorage.setItem('blogPosts', JSON.stringify(existingPosts));
+
+                    // Show success message
+                    messageBox.textContent = 'Blog post uploaded successfully! Redirecting...';
+                    messageBox.style.backgroundColor = 'var(--success-green)'; // Use CSS variable
+                    messageBox.style.color = 'var(--white)'; // Use CSS variable
+                    messageBox.style.display = 'block';
+
+                    // Redirect to home page and scroll to posts after a short delay
+                    setTimeout(() => {
+                        window.location.href = 'index.html#posts';
+                    }, 2000); // Redirect after 2 seconds
+                });
+            }
+
+            // Hamburger Menu (retained for this page)
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', () => {
+                    hamburger.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+
+                document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                }));
+            }
+
+            // Scroll to Top Button (retained for this page)
+            const scrollToTopBtn = document.getElementById('scroll-to-top');
+
+            window.addEventListener('scroll', () => {
+                if (scrollToTopBtn) {
+                    if (window.scrollY > 300) {
+                        scrollToTopBtn.classList.add('show');
+                    } else {
+                        scrollToTopBtn.classList.remove('show');
+                    }
+                }
+            });
+
+            if (scrollToTopBtn) {
+                scrollToTopBtn.addEventListener('click', () => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+
+            // Loading Spinner (retained for this page)
+            const loadingSpinner = document.getElementById('loading-spinner');
+            window.addEventListener('load', () => {
+                if (loadingSpinner) {
+                    loadingSpinner.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

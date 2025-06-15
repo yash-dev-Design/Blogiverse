@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Blogiverse</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="blogger.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="admin-body">
+    <nav class="admin-nav">
+        <div class="admin-nav-container">
+            <div class="admin-logo">
+                <a href="index.html">Blogiverse Admin</a>
+            </div>
+            <div class="admin-nav-right">
+                <div class="admin-user-info">
+                    <i class="fas fa-user-circle"></i>
+                    <span>Yash Royz</span>
+                </div>
+                <button class="logout-btn" id="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="admin-container">
+        <aside class="admin-sidebar">
+            <ul class="sidebar-menu">
+                <li class="menu-item active" data-section="dashboard">
+                    <a href="#" class="menu-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                </li>
+                <li class="menu-item" data-section="manage-posts">
+                    <a href="#" class="menu-link"><i class="fas fa-newspaper"></i> Manage Posts</a>
+                </li>
+                <li class="menu-item" data-section="add-post">
+                    <a href="#" class="menu-link"><i class="fas fa-plus-circle"></i> Add New Post</a>
+                </li>
+                <!-- Add more admin sections as needed -->
+            </ul>
+        </aside>
+
+        <main class="admin-main">
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="admin-section active">
+                <div class="section-header">
+                    <h1>Dashboard</h1>
+                    <p>Overview of your blog statistics.</p>
+                </div>
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-newspaper"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="total-posts">0</h3>
+                            <p>Total Posts</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="total-users">0</h3>
+                            <p>Total Users (Placeholder)</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="total-comments">0</h3>
+                            <p>Total Comments (Placeholder)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recent-posts">
+                    <h2>Recent Posts</h2>
+                    <div id="recent-posts-list">
+                        <!-- Recent posts will be loaded here by admin.js -->
+                        <p class="text-center">No recent posts to display.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Manage Posts Section (CRUD: Read, Update, Delete) -->
+            <section id="manage-posts" class="admin-section">
+                <div class="section-header">
+                    <h1>Manage Posts</h1>
+                    <p>View, edit, or delete existing blog posts.</p>
+                </div>
+                <div class="posts-table-container">
+                    <div class="table-header">
+                        <div class="search-filter">
+                            <input type="text" id="manage-posts-search" class="search-input" placeholder="Search posts...">
+                            <select id="manage-posts-filter-category" class="filter-select">
+                                <option value="all">All Categories</option>
+                                <option value="technology">Technology</option>
+                                <option value="lifestyle">Lifestyle</option>
+                                <option value="travel">Travel</option>
+                                <option value="education">Education</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="posts-table-wrapper">
+                        <table class="posts-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Title</th>
+                                    <th>Category</th>
+                                    <th>Date</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="posts-table-body">
+                                <!-- Posts will be loaded here by admin.js -->
+                                <tr><td colspan="5" class="text-center">No posts to display.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Add New Post Section (CRUD: Create) -->
+            <section id="add-post" class="admin-section">
+                <div class="section-header">
+                    <h1>Add New Post</h1>
+                    <p>Create a new blog post.</p>
+                </div>
+                <form id="add-post-form" class="post-form">
+                    <div class="form-group">
+                        <label for="post-title">Title</label>
+                        <input type="text" id="post-title" required style="border: 1px solid black;">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="post-category">Category</label>
+                            <select id="post-category" required style="border: 1px solid black;">
+                                <option value="">Select Category</option>
+                                <option value="technology">Technology</option>
+                                <option value="lifestyle">Lifestyle</option>
+                                <option value="travel">Travel</option>
+                                <option value="education">Education</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="post-image-url">Image URL</label>
+                            <input type="url" id="post-image-url" placeholder="e.g., https://example.com/image.jpg" required style="border: 1px solid black;">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="post-excerpt">Excerpt</label>
+                        <textarea id="post-excerpt" rows="3" required style="border: 1px solid black;"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="post-content">Full Content</label>
+                        <textarea id="post-content" rows="10" required style="border: 1px solid black;"></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary" id="save-post-btn">Add Post</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modals for Edit and Delete Confirmation -->
+    <div class="modal-overlay" id="edit-post-modal-overlay">
+        <div class="modal" id="edit-post-modal">
+            <div class="modal-header">
+                <h3>Edit Post</h3>
+                <button class="modal-close" id="edit-modal-close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <form id="edit-post-form" class="post-form">
+                    <input type="hidden" id="edit-post-id">
+                    <div class="form-group">
+                        <label for="edit-post-title">Title</label>
+                        <input type="text" id="edit-post-title" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="edit-post-category">Category</label>
+                            <select id="edit-post-category" required>
+                                <option value="technology">Technology</option>
+                                <option value="lifestyle">Lifestyle</option>
+                                <option value="travel">Travel</option>
+                                <option value="education">Education</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-post-image-url">Image URL</label>
+                            <input type="url" id="edit-post-image-url" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-post-excerpt">Excerpt</label>
+                        <textarea id="edit-post-excerpt" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-post-content">Full Content</label>
+                        <textarea id="edit-post-content" rows="10" required></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">Save Changes</button>
+                        <button type="button" class="btn-secondary" id="edit-modal-cancel">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="delete-confirm-modal-overlay">
+        <div class="modal" id="delete-confirm-modal">
+            <div class="modal-header">
+                <h3>Confirm Deletion</h3>
+                <button class="modal-close" id="delete-modal-close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete this post? This action cannot be undone.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-danger" id="confirm-delete-btn">Delete</button>
+                <button type="button" class="btn-secondary" id="cancel-delete-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <div class="toast-content">
+            <i class="toast-icon"></i>
+            <p id="toast-message"></p>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

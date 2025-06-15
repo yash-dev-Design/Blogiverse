@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogiverse</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="blogger.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@400..900&family=Dancing+Script:wght@400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rowdies:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">Blogiverse</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#posts" class="nav-link">Posts</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="upload-blog.html" class="nav-link">Upload Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="admin-login.html" class="nav-link admin-link">Admin</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title fade-in">Welcome to Blogiverse</h1>
+            <p class="hero-subtitle slide-up">Discover stories, insights, and ideas that inspire</p>
+            <a href="#posts" class="cta-button bounce-in">Explore Articles</a>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <section id="posts" class="posts-section">
+        <div class="container">
+            <h2 class="section-title">Latest Articles</h2>
+
+            <div class="category-filter">
+                <button class="filter-btn active" data-category="all">All Posts</button>
+                <button class="filter-btn" data-category="technology">Technology</button>
+                <button class="filter-btn" data-category="lifestyle">Lifestyle</button>
+                <button class="filter-btn" data-category="travel">Travel</button>
+                <button class="filter-btn" data-category="education">Education</button>
+            </div>
+
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search articles..." class="search-input">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+
+            <div class="posts-grid" id="posts-grid">
+                <!-- Blog posts will be dynamically loaded here -->
+            </div>
+
+            <div class="load-more-container">
+                <button id="load-more-btn" class="load-more-btn">Load More Articles</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">About Blogiverse</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Welcome to Blogiverse, where stories come alive and ideas flourish. We're dedicated to sharing
+                        valuable insights, inspiring stories, and thought-provoking content across various topics.</p>
+                    <p>Our platform brings together diverse voices and perspectives, creating a space where readers can
+                        discover new ideas, learn something new, and be inspired by the experiences of others.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <h3 class="stat-number" data-target="500">14+</h3>
+                        <p class="stat-label">Articles Published</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 class="stat-number" data-target="10000">50+</h3>
+                        <p class="stat-label">Happy Readers</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 class="stat-number" data-target="50">20+</h3>
+                        <p class="stat-label">Expert Writers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>mmvyash.143@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+91 7989552340</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Address</h3>
+                            <p>Wahab Road, Tenali. AP</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="contact-name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="contact-email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="contact-subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="contact-message" placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Blogiverse</h3>
+                    <p>Your destination for inspiring stories and valuable insights. Join our community of readers and
+                        writers.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#posts">Posts</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#posts">Technology</a></li>
+                        <li><a href="#posts">Lifestyle</a></li>
+                        <li><a href="#posts">Travel</a></li>
+                        <li><a href="#posts">Education</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to get the latest updates</p>
+                    <form class="newsletter-form" id="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Blogiverse. All rights reserved. Made With ♥ By <a
+                        href="https://royz-portfolio.netlify.app/" target="_blank" title="author website"
+                        style="text-decoration: none; color: whitesmoke; font-weight: bold; font-style: italic;">YashRoyz</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scroll-to-top" class="scroll-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <div class="loading-spinner" id="loading-spinner">
+        <div class="spinner"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const postsGrid = document.getElementById('posts-grid');
+            const loadMoreBtn = document.getElementById('load-more-btn');
+            const searchInput = document.getElementById('search-input');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+
+            let allPosts = []; // Will hold all blog post data
+            let visiblePostsCount = 6; // Initial number of visible posts
+            const postsToLoad = 3; // Number of posts to load each time "Load More" is clicked
+
+            // Function to generate a blog post card HTML
+            const createPostCard = (post) => {
+                const defaultImageUrl = 'https://placehold.co/400x250/cccccc/333333?text=No+Image';
+                return `
+                    <div class="post-card fade-in-post" data-category="${post.category.toLowerCase()}" data-id="${post.id}">
+                        <img class="post-image" src="${post.imageUrl || defaultImageUrl}" alt="${post.title}">
+                        <div class="post-content">
+                            <span class="post-category">${post.category}</span>
+                            <h3 class="post-title">${post.title}</h3>
+                            <p class="post-excerpt">${post.summary}</p>
+                            <div class="post-meta">
+                                <span><i class="far fa-calendar-alt"></i> ${post.date}</span>
+                                <span><i class="far fa-comments"></i> ${post.comments} Comments</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            };
+
+            // Function to render posts to the grid
+            const renderPosts = (postsToRender) => {
+                postsGrid.innerHTML = ''; // Clear existing posts
+                postsToRender.slice(0, visiblePostsCount).forEach(post => {
+                    postsGrid.insertAdjacentHTML('beforeend', createPostCard(post));
+                });
+                updateLoadMoreButtonVisibility(postsToRender.length);
+            };
+
+            // Function to update Load More button visibility
+            const updateLoadMoreButtonVisibility = (currentPostsCount) => {
+                if (loadMoreBtn) { // Check if the button exists
+                    if (visiblePostsCount >= currentPostsCount) {
+                        loadMoreBtn.style.display = 'none';
+                    } else {
+                        loadMoreBtn.style.display = 'block';
+                    }
+                }
+            };
+
+            // Load posts from localStorage or use default ones
+            const loadBlogPosts = () => {
+                // Get stored posts, or an empty array if none
+                const storedPosts = JSON.parse(localStorage.getItem('blogPosts')) || [];
+
+                // Define default posts with unique IDs (e.g., using a fixed string or negative number for demo content)
+                const defaultPosts = [
+                    {
+                        id: 'default-1',
+                        title: "The Future of AI in Everyday Life",
+                        category: "Technology",
+                        imageUrl: "https://plus.unsplash.com/premium_photo-1683121710572-7723bd2e235d?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YXJ0aWZpY2lhbCUyMGludGVsbGlnZW5jZXxlbnwwfHwwfHx8MA%3D%3D",
+                        summary: "Explore how artificial intelligence is set to transform various aspects of our daily routines, from smart homes to personalized experiences.",
+                        date: "May 28, 2025",
+                        comments: 3
+                    },
+                    {
+                        id: 'default-2',
+                        title: "Mindful Living: A Guide to Inner Peace",
+                        category: "Lifestyle",
+                        imageUrl: "https://images.unsplash.com/photo-1659177121700-bc9c36da8a40?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8TWluZGZ1bCUyMExpdmluZyUzQSUyMEElMjBHdWlkZSUyMHRvJTIwSW5uZXIlMjBQZWFjZXxlbnwwfHwwfHx8MA%3D%3D",
+                        summary: "Discover practical tips and techniques for incorporating mindfulness into your busy life to achieve greater calm and well-being.",
+                        date: "May 25, 2025",
+                        comments: 5
+                    },
+                    {
+                        id: 'default-3',
+                        title: "10 Must-Visit Destinations in Southeast Asia",
+                        category: "Travel",
+                        imageUrl: "https://images.unsplash.com/photo-1704314315344-cd10b9779ce6?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fDEwJTIwTXVzdCUyMFZpc2l0JTIwRGVzdGluYXRpb25zJTIwaW4lMjBTb3V0aGVhc3QlMjBBc2lhfGVufDB8fDB8fHww",
+                        summary: "Embark on a virtual journey through stunning landscapes and vibrant cultures with our top picks for your next adventure.",
+                        date: "May 22, 2025",
+                        comments: 8
+                    },
+                    {
+                        id: 'default-4',
+                        title: "Backpacking Through the Alps: A Survival Guide",
+                        category: "Travel",
+                        imageUrl: "https://plus.unsplash.com/premium_photo-1681819359330-c6dd5f8ae594?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8QmFja3BhY2tpbmclMjBUaHJvdWdoJTIwdGhlJTIwQWxwcyUzQSUyMEElMjBTdXJ2aXZhbCUyMEd1aWRlfGVufDB8MHwwfHx8MA%3D%3D",
+                        summary: "Discover essential tips and breathtaking trails for your next Alpine adventure.",
+                        date: "May 28, 2025",
+                        comments: 5
+                    },
+                    {
+                        id: 'default-5',
+                        title: "Hidden Gems of South America",
+                        category: "Travel",
+                        imageUrl: "https://images.unsplash.com/photo-1650382837349-b10e734f3f36?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8SGlkZGVuJTIwR2VtcyUyMG9mJTIwU291dGglMjBBbWVyaWNhfGVufDB8MHwwfHx8MA%3D%3D",
+                        summary: "Explore lesser-known destinations that offer incredible beauty and culture without the tourist crowds.",
+                        date: "June 5, 2025",
+                        comments: 9
+                    },
+                    {
+                        id: 'default-4',
+                        title: "Effective Study Habits for College Students",
+                        category: "Education",
+                        imageUrl: "https://images.unsplash.com/photo-1682310916704-8f91c1a1b66b?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fEVmZmVjdGl2ZSUyMFN0dWR5JTIwSGFiaXRzJTIwZm9yJTIwQ29sbGVnZSUyMFN0dWRlbnRzfGVufDB8MHwwfHx8MA%3D%3D",
+                        summary: "Boost your academic performance with proven strategies for time management, note-taking, and exam preparation.",
+                        date: "May 19, 2025",
+                        comments: 2
+                    },
+                    {
+                        id: 'default-5',
+                        title: "Online vs. Offline Learning: What's Best for You?",
+                        category: "Education",
+                        imageUrl: "https://images.unsplash.com/photo-1587815280777-90694ad8c4ac?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8T25saW5lJTIwdnMuJTIwT2ZmbGluZSUyMExlYXJuaW5nJTNBJTIwV2hhdCdzJTIwQmVzdCUyMGZvciUyMFlvdSUzRnxlbnwwfDB8MHx8fDA%3D",
+                        summary: "With hybrid models gaining popularity, we compare the pros and cons of online and offline education.",
+                        date: "May 25, 2025",
+                        comments: 6
+                    },
+                    {
+                        id: 'default-6',
+                        title: "Mastering Time Management in College",
+                        category: "Education",
+                        imageUrl: "https://plus.unsplash.com/premium_photo-1663126649902-da96ec858a02?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8TWFzdGVyaW5nJTIwVGltZSUyME1hbmFnZW1lbnQlMjBpbiUyMENvbGxlZ2V8ZW58MHwwfDB8fHww",
+                        summary: "Learn how to balance classes, assignments, and free time without burning out.",
+                        date: "June 3, 2025",
+                        comments: 4
+                    },
+                    {
+                        id: 'default-5',
+                        title: "The Rise of Quantum Computing",
+                        category: "Technology",
+                        imageUrl: "https://plus.unsplash.com/premium_photo-1700942979302-72ef87e43525?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8VGhlJTIwUmlzZSUyMG9mJTIwUXVhbnR1bSUyMENvbXB1dGluZ3xlbnwwfDB8MHx8fDA%3D",
+                        summary: "Delve into the fascinating world of quantum computing and its potential to revolutionize industries and solve complex problems.",
+                        date: "May 16, 2025",
+                        comments: 6
+                    },
+                    {
+                        id: 'default-6',
+                        title: "Enjoying life now or never ?",
+                        category: "Lifestyle",
+                        imageUrl: "https://plus.unsplash.com/premium_photo-1682090580941-1dd31d301efe?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bGlmZSUyMHN0eWxlfGVufDB8MHwwfHx8MA%3D%3D",
+                        summary: "Teenagers were being so dramatic in their lives that they forgot to enjoy life.",
+                        date: "May 14, 2025",
+                        comments: 4
+                    },
+                    {
+                        id: 'default-7',
+                        title: "Digital Detox: Reclaiming Our Time",
+                        category: "Lifestyle",
+                        imageUrl: "https://images.unsplash.com/photo-1668441126118-7ba4c6bac1b5?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8RGlnaXRhbCUyMERldG94JTNBJTIwUmVjbGFpbWluZyUyME91ciUyMFRpbWV8ZW58MHwwfDB8fHww",
+                        summary: "In a world addicted to screens, a digital detox might be the reset we all need.",
+                        date: "May 20, 2025",
+                        comments: 7
+                    },
+                    {
+                        id: 'default-8',
+                        title: "Minimalism: Less is Truly More",
+                        category: "Lifestyle",
+                        imageUrl: "https://images.unsplash.com/photo-1704213684422-cd2543e560d6?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8TWluaW1hbGlzbSUzQSUyMExlc3MlMjBpcyUyMFRydWx5JTIwTW9yZXxlbnwwfDB8MHx8fDA%3D",
+                        summary: "Clearing physical clutter can help declutter the mind—here's why minimalism is trending.",
+                        date: "June 2, 2025",
+                        comments: 3
+                    }
+                ];
+
+                // Create a map of stored post IDs for quick lookup
+                const storedPostIds = new Set(storedPosts.map(post => post.id));
+
+                // Filter out any default posts that are already present in storedPosts (by ID)
+                const uniqueDefaultPosts = defaultPosts.filter(
+                    defaultPost => !storedPostIds.has(defaultPost.id)
+                );
+
+                // Combine stored posts with unique default posts
+                // Ensure stored posts appear first, as they are likely newer user-added content
+                allPosts = [...storedPosts, ...uniqueDefaultPosts];
+
+                // Sort all posts by date (newest first).
+                // Assuming 'date' is in a format like "Month Day, Year" which Date constructor can parse.
+                allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+                renderPosts(allPosts);
+            };
+
+            // Initial load of posts when the page loads
+            loadBlogPosts();
+
+            // Hamburger Menu
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', () => {
+                    hamburger.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+
+                document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                }));
+            }
+
+            // Scroll to Top Button
+            const scrollToTopBtn = document.getElementById('scroll-to-top');
+
+            window.addEventListener('scroll', () => {
+                if (scrollToTopBtn) {
+                    if (window.scrollY > 300) {
+                        scrollToTopBtn.classList.add('show');
+                    } else {
+                        scrollToTopBtn.classList.remove('show');
+                    }
+                }
+            });
+
+            if (scrollToTopBtn) {
+                scrollToTopBtn.addEventListener('click', () => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+
+            // Loading Spinner
+            const loadingSpinner = document.getElementById('loading-spinner');
+            window.addEventListener('load', () => {
+                if (loadingSpinner) {
+                    loadingSpinner.style.display = 'none';
+                }
+            });
+
+            // Category Filter
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    const category = button.dataset.category;
+                    const filteredPosts = category === 'all'
+                        ? allPosts
+                        : allPosts.filter(post => post.category.toLowerCase() === category);
+
+                    visiblePostsCount = postsToLoad * 2; // Reset visible posts when filtering, show initial set
+                    renderPosts(filteredPosts);
+                });
+            });
+
+            // Search Functionality
+            if (searchInput) {
+                searchInput.addEventListener('keyup', (e) => {
+                    const searchTerm = e.target.value.toLowerCase();
+                    const filteredAndSearchedPosts = allPosts.filter(post =>
+                        post.title.toLowerCase().includes(searchTerm) ||
+                        post.summary.toLowerCase().includes(searchTerm)
+                    );
+
+                    visiblePostsCount = postsToLoad * 2; // Reset visible posts when searching
+                    renderPosts(filteredAndSearchedPosts);
+                });
+            }
+
+            // Load More Articles
+            if (loadMoreBtn) {
+                loadMoreBtn.addEventListener('click', () => {
+                    visiblePostsCount += postsToLoad;
+                    // Determine which set of posts (filtered/searched or all) to extend
+                    const activeCategory = document.querySelector('.filter-btn.active')?.dataset.category || 'all';
+                    const currentSearchTerm = searchInput ? searchInput.value.toLowerCase() : '';
+
+                    let postsToConsider = allPosts;
+
+                    if (activeCategory !== 'all') {
+                        postsToConsider = postsToConsider.filter(post =>
+                            post.category.toLowerCase() === activeCategory
+                        );
+                    }
+
+                    if (currentSearchTerm) {
+                        postsToConsider = postsToConsider.filter(post =>
+                            post.title.toLowerCase().includes(currentSearchTerm) ||
+                            post.summary.toLowerCase().includes(currentSearchTerm)
+                        );
+                    }
+                    renderPosts(postsToConsider);
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
